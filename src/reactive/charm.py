@@ -5,7 +5,6 @@
 import logging
 
 from charms.reactive import set_flag, when, when_not, hook, endpoint_from_flag
-from charms.layer import snap
 from charmhelpers.core import hookenv
 from charmhelpers.core.host import service_running
 
