@@ -1,0 +1,11 @@
+name: inventory-collector
+maintainer: Diko Parvanov <diko.parvanov@canonical.com>
+summary: Inventory collector charm collecting data from inventory exporters.
+description: |
+  Charm is collecting the data from the inventory exporter charms scattered in
+  a cloud and archiving in tars for processsing.
+subordinate: false
+series: []
+requires:
+  inventory-exporter:
+    interface: inventory-exporter

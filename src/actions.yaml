@@ -1,0 +1,5 @@
+collect:
+  description: Run a collection script for all data with current timestamp.
+cleanup:
+  description: Cleanup all collected data so far.
+

@@ -1,0 +1,10 @@
+options:
+  collection_path:
+    type: string
+    default: ""
+    description: |
+      The path where the data should be collected. Default is empty and charm
+      is in blocked state until this is configured.
+      This can be added to a machine where there is a pre-defined storage
+      for the job and collect the data there.
+
