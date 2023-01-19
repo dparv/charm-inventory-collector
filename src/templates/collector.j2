@@ -6,6 +6,7 @@ targets:
 {%- for target in targets %}
   - 
    endpoint: {{target['ip']}}:{{target['port']}}
+   hostname: {{target['hostname']}}
    customer: {{target['customer']}}
    site: {{target['site']}}
    model: {{target['model']}}

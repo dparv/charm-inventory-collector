@@ -80,12 +80,14 @@ def render_targets():
             relation_data = hookenv.relation_get(rid=rid, unit=unit)
             ip = relation_data.get("private-address")
             port = relation_data.get("port")
+            hostname = relation_data.get("hostname")
             customer = hookenv.config("customer")
             site = hookenv.config("site")
             model = relation_data.get("model")
             targets.append({
                 'ip': ip,
                 'port': port,
+                'hostname': hostname,
                 'customer': customer,
                 'site': site,
                 'model': model,
