@@ -1,6 +1,13 @@
 settings:
   collection_path: {{ collection_path }}
   juju_data: {{ juju_data }}
+  customer: {{ customer }}
+  site: {{ site }}
+
+models:
+{%- for model in models %}
+  - {{ model }}
+{%- endfor %}
 
 targets:
 {%- for target in targets %}

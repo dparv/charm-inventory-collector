@@ -75,15 +75,17 @@ def inventory_exporter_departed():
 @when_not('inventory-exporter.targets.rendered')
 def render_targets():
     targets = []
+    customer = hookenv.config("customer")
+    site = hookenv.config("site")
+    models = set()
     for rid in hookenv.relation_ids("inventory-exporter"):
         for unit in hookenv.related_units(rid):
             relation_data = hookenv.relation_get(rid=rid, unit=unit)
             ip = relation_data.get("private-address")
             port = relation_data.get("port")
             hostname = relation_data.get("hostname")
-            customer = hookenv.config("customer")
-            site = hookenv.config("site")
             model = relation_data.get("model")
+            models.add(model)
             targets.append({
                 'ip': ip,
                 'port': port,
@@ -98,6 +100,9 @@ def render_targets():
         'collection_path': collection_path,
         'juju_data': juju_data,
         'targets': targets,
+        'customer': customer,
+        'site': site,
+        'models': list(models),
         }
     render(
         source=CONFIG_TEMPLATE,
