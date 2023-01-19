@@ -3,8 +3,25 @@ options:
     type: string
     default: ""
     description: |
-      The path where the data should be collected. Default is empty and charm
-      is in blocked state until this is configured.
-      This can be added to a machine where there is a pre-defined storage
-      for the job and collect the data there.
-
+      The path where the data should be collected. The default location is
+      /var/lib/inventory-collector/output. This can be added to a machine
+      where there is a pre-defined storage for the output. Make sure there are
+      permissions to write in that path.
+  juju_data:
+    type: string
+    default: "~/.local/share/juju"
+    description: |
+      The JUJU_DATA environment variables used to collect juju status and bundle
+      config from the controller.
+  customer:
+    type: string
+    default: ""
+    description: |
+      REQUIRED. If not set charm will be in blocked state.
+      The customer name appended to the tar files.
+  site:
+    type: string
+    default: ""
+    description: |
+      REQUIRED. If not set charm will be in blocked state.
+      The site name of the customer (if multiple) appended to the tar files.

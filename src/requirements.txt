@@ -1,1 +1,3 @@
 charmhelpers
+juju==2.9.38.1
+requests

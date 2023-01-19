@@ -1,0 +1,12 @@
+settings:
+  collection_path: {{ collection_path }}
+  juju_data: {{ juju_data }}
+
+targets:
+{%- for target in targets %}
+  - 
+   endpoint: {{target['ip']}}:{{target['port']}}
+   customer: {{target['customer']}}
+   site: {{target['site']}}
+   model: {{target['model']}}
+{%- endfor %}
