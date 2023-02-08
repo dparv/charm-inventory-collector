@@ -86,7 +86,7 @@ async def juju_data():
 
     for uuid in model_uuids:
         model = await controller.get_model(uuid)
-        await model.connect()
+        await model.connect(uuid)
         status = await model.get_status()
         bundle = await model.export_bundle()
         await model.disconnect()
